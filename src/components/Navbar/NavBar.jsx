@@ -1,8 +1,8 @@
 import React from 'react';
-import CartWidget from './CartWidget';
 import { BsCart2 } from "react-icons/bs";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar, Container, Nav } from 'react-bootstrap';
+import Icon from '../CartWidget/CartWidget';
 
 const styles = {
   Cart: {
@@ -16,9 +16,11 @@ const styles = {
 function Menu() {
   return (
     
+    
+
     <Navbar bg="light" variant="light">
     <Container>
-    <Navbar.Brand href="#home"><CartWidget/></Navbar.Brand>
+    <Navbar.Brand href="#home"><Icon/></Navbar.Brand>
     <Nav className="me-auto">
     <Nav.Link href="#HYUNDAI">HYUNDAI</Nav.Link>
     <Nav.Link href="#KIA">KIA</Nav.Link>

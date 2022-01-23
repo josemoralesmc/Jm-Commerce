@@ -1,6 +1,6 @@
 import React from 'react'
 
-import auto from '../img/auto2.jpg'
+import auto from '../../img/auto2.jpg'
 
 const styles = {
     car: {

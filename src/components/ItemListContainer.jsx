@@ -1,19 +1,18 @@
-import React from 'react'
+import { useEffect, useState } from "react"
+import ItemCount from "./ItemCount.js/ItemCount"
 
+function ItemListContainer() { 
 
-const style = {
-    h1: {
-        textAlign: "center",
-        verticalAlign: "center"
+    function onAdd(cant) {
+        console.log(cant)
     }
-}
 
-const ItemListContainer = ( {greetings} ) => {
-  return (
-    <div >
-     <h1 style={style.h1}>{ greetings}</h1> 
-    </div>
-  )
+    
+    return (
+        <div>
+            <ItemCount initial={1} stock={10} onAdd={onAdd} />
+        </div>
+    )
 }
 
 export default ItemListContainer
