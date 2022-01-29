@@ -1,17 +1,17 @@
 import React from 'react'
-import ItemListC from './components/ItemListContainer';
-import { BrowserRouter, Routes, Route} from 'react-router-dom'
-import ItemCount from './components/ItemCount.js/ItemCount';
+import ItemListContainer from './components/Items/ItemListContainer';
+import { BrowserRouter} from 'react-router-dom'
 import Menu from './components/Navbar/NavBar';
+import ItemDetailContainer from './components/ItemDetails/ItemDetailContainer';
 
 
 function App() {
   return (
-    <div>
-    <Menu/>
-    <ItemListC/>
-    </div>
-  );
+      <div>
+        <Menu/>
+        <ItemDetailContainer/>
+      </div>
+    );
 }
 
 export default App;
