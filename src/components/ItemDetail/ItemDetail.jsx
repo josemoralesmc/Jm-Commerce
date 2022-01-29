@@ -12,8 +12,8 @@ const ItemDetail = ({ product }) => {
           <h2>{product.price}</h2>
         </div>
       </div>
-      <Navbar.Text>{product.detail}</Navbar.Text>
-    </div>
+      <p  style={{width:"25em", textAlign:"center", margin:"auto"}}>{product.detail}</p>
+    </div>  
   );
 };
 
