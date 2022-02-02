@@ -3,11 +3,11 @@ import { BsCart2 } from "react-icons/bs";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import Icon from "../CartWidget/CartWidget";
+import { Link, NavLink } from "react-router-dom"
 
 const styles = {
   Cart: {
     width: "1em",
-    marginTop: 10,
   },
 };
 
@@ -15,19 +15,18 @@ function Menu() {
   return (
     <Navbar bg="light" variant="light">
       <Container>
-        <Navbar.Brand href="#home">
+        <NavLink to="/">
           <Icon />
-        </Navbar.Brand>
+        </NavLink>
         <Nav className="me-auto">
-          <Nav.Link href="#HYUNDAI">HYUNDAI</Nav.Link>
-          <Nav.Link href="#KIA">KIA</Nav.Link>
-          <Nav.Link href="#FORD">FORD</Nav.Link>
-          <Nav.Link href="#PEUGEOT">PEUGEOT</Nav.Link>
-          <Nav.Link href="#FIAT">FIAT</Nav.Link>
+          <Link style={{padding:"10px"}} to="/categoria/Hyundai">HYUNDAI</Link>
+          <Link style={{padding:"10px"}} to="/categoria/Kia">KIA</Link>
+          <Link style={{padding:"10px"}} to="/categoria/Ford">FORD</Link>
+          <Link style={{padding:"10px"}} to="/categoria/Peugeot">PEUGEOT</Link>
         </Nav>
         <Nav>
           <BsCart2 style={styles.Cart} />
-          <Nav.Link href="#CARRO">MI CARRITO</Nav.Link>
+          <Link  to="/CARRO">MI CARRITO</Link>
         </Nav>
       </Container>
     </Navbar>
