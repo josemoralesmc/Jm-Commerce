@@ -7,9 +7,9 @@ export default function ItemList({ productos, loading}) {
 
   return (
     <>
-    {loading ? <div class="d-flex justify-content-center">
-    <div class="spinner-grow" role="status">
-   <span class="visually-hidden">Loading...</span>
+    {loading ? <div className="d-flex justify-content-center">
+    <div className="spinner-grow" role="status">
+   <span className="visually-hidden">Loading...</span>
  </div></div> : productos.map( productos => 
   <Item key={productos.id} productos={productos} style={{ width: '18rem' }}/>)}
     </>

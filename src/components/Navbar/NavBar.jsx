@@ -26,7 +26,7 @@ function Menu() {
         </Nav>
         <Nav>
           <BsCart2 style={styles.Cart} />
-          <Link  to="/CARRO">MI CARRITO</Link>
+          <Link  to="/cart">MI CARRITO</Link>
         </Nav>
       </Container>
     </Navbar>
