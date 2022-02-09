@@ -10,10 +10,10 @@ export function useContextCart() { return useContext(contextCart) }
 
 function CartContext({children}) {
 
-    const [list, setList] = useState({})
+    const [list, setList] = useState([])
 
     function CartProduct(product) {
-        setList([...list, product ])
+        setList( [ ...list, product ] )
     }
 
     function DeleteCart() {
@@ -21,10 +21,12 @@ function CartContext({children}) {
     }
 
     return (
-       <contextCart.Provider value={
+       <contextCart.Provider value={{
+
            list,
            CartProduct,
            DeleteCart
+        }
        }>
        
         {children}

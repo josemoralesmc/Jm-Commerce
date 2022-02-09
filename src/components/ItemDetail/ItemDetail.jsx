@@ -1,12 +1,39 @@
 import React from "react";
+import { useContextCart } from "../Context/CartContext";
 import ItemCount from "../ItemCount.js/ItemCount";
 
 const ItemDetail = ({ product }) => {
-  function onAdd(cant) {
-    console.log(cant);
+
+const { list, CartProduct } = useContextCart();
+
+
+function onAdd(cant) {
+   if (DuplicateProducts(product.name)) {
+   /*  const liste = [...list]
+     liste.forEach((e)=>{
+       
+      if (e.name === product.name) {
+        cant += e.quantity
+      }
+
+    })
+ */
+    return console.log("Se repite");
+    }
+
+    return CartProduct( { ...product  , quantity: cant });
   }
 
-  console.log(product);
+
+  const DuplicateProducts = (element) => {
+
+    const findProd = list.find((e) => {
+     return e.name === element})
+    return findProd
+  }
+
+console.log(list);
+  
   return (
     <div>
       <div>
