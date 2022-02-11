@@ -8,29 +8,25 @@ const { list, CartProduct } = useContextCart();
 
 
 function onAdd(cant) {
-   if (DuplicateProducts(product.name)) {
-   /*  const liste = [...list]
+   if (DuplicateProducts(product.id)) {
+     const liste = [...list]
      liste.forEach((e)=>{
        
-      if (e.name === product.name) {
-        cant += e.quantity
+      if (e.id === product.id) {
+       e.quantity += cant
       }
 
     })
- */
-    return console.log("Se repite");
+    
+
+    return console.log(liste);
     }
 
     return CartProduct( { ...product  , quantity: cant });
   }
 
 
-  const DuplicateProducts = (element) => {
-
-    const findProd = list.find((e) => {
-     return e.name === element})
-    return findProd
-  }
+  const DuplicateProducts = (id) => list.find((e) =>  e.id === id) 
 
 console.log(list);
   

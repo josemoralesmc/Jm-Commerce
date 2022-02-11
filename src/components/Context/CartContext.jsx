@@ -16,8 +16,10 @@ function CartContext({children}) {
         setList( [ ...list, product ] )
     }
 
-    function DeleteCart() {
-        setList([])
+    function DeleteCart(id) {
+        const deleteid = [...list]
+        const filterDelete = deleteid.find(e => e.id !== id)
+        return setList(filterDelete)
     }
 
     return (
