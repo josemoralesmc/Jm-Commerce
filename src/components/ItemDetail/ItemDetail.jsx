@@ -4,7 +4,7 @@ import ItemCount from "../ItemCount.js/ItemCount";
 
 const ItemDetail = ({ product }) => {
 
-const { list, CartProduct } = useContextCart();
+const { list, setList, CartProduct } = useContextCart();
 
 
 function onAdd(cant) {
@@ -15,20 +15,15 @@ function onAdd(cant) {
       if (e.id === product.id) {
        e.quantity += cant
       }
-
     })
-    
-
-    return console.log(liste);
-    }
-
-    return CartProduct( { ...product  , quantity: cant });
+    return setList(liste); 
+  }
+  return CartProduct( { ...product  , quantity: cant });
   }
 
 
   const DuplicateProducts = (id) => list.find((e) =>  e.id === id) 
 
-console.log(list);
   
   return (
     <div>

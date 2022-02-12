@@ -19,11 +19,7 @@ const ItemDetailContainer = () => {
     });
       
   
-  // .then((data) => {
-        // setProduct(data.find(item => item.id === idProducto)) 
-        
-    //});
-
+ 
 }, []);
 
   return (

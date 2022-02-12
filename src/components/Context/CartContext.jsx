@@ -22,10 +22,13 @@ function CartContext({children}) {
         return setList(filterDelete)
     }
 
+    console.log(list);
+
     return (
        <contextCart.Provider value={{
 
            list,
+           setList,
            CartProduct,
            DeleteCart
         }
