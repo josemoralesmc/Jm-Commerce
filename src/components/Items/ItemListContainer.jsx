@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react"
 import ItemList from "./ItemList"
-import { getFetch } from "../../helpers/products"
+import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore'
 import { useParams } from "react-router-dom"
 
 function ItemListContainer() { 
 
 
-  const [productos, setProductos] = useState ([])
+  const [products, setProducts] = useState ([])
   const [loading, setloading] = useState(true)
 
   let { category } = useParams();
@@ -15,18 +15,38 @@ function ItemListContainer() {
  
 
   useEffect(() => {
-    getFetch
-    .then(res => setProductos(category ? res.filter( item => item.categoria === category) : 
+    if(category){
+      const db = getFirestore();
+      const querycollection = collection(db, 'products')
+      const queryfilter = query(querycollection,
+        where('category', '==', category ))
+      getDocs(queryfilter)
+      .then( res => setProducts(res.docs.map(item => ({id: item.id, ...item.data()}))))
+      .catch(err => console.log(err))
+      .finally(() => setloading(false))
+
+    }else{
+      
+      const db = getFirestore()
+      const querycollection = collection(db ,'products')
+      getDocs(querycollection)
+      .then(res => setProducts(res.docs.map(item => ({ id: item.id, ...item.data() })  )))
+      .catch(err => console.log(err))
+      .finally(() => setloading(false))
+    }
+
+
+    /* .then(res => setProductos(category ? res.filter( item => item.categoria === category) : 
     res))
     .catch(err => console.log(err))
-    .finally(()=> setloading(false)) 
+    .finally(()=> setloading(false))  */
 }, [category])
 
 
     
     return (
           <div className="d-flex justify-content-center">
-            <ItemList productos={productos} loading={loading} />
+            <ItemList products={products} loading={loading} />
           </div>
     )
 }

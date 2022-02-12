@@ -1,11 +1,11 @@
 import React from 'react'
 
-import auto from '../../img/auto2.jpg'
+import icon from '../../img/controller-1784573_640.png'
 
 const styles = {
     car: {
-        width: "9em",
-        heigth: "7em"
+        width: "5em",
+        heigth: "3em"
     }
 }
 
@@ -14,7 +14,7 @@ function Icon()
 {
     return ( 
         
-        <img src={auto} alt="logo" style={styles.car} />
+        <img src={icon} alt="logo" style={styles.car} />
         
      );
 }

@@ -19,14 +19,14 @@ function Menu() {
           <Icon />
         </NavLink>
         <Nav className="me-auto">
-          <Link style={{padding:"10px"}} to="/categoria/Hyundai">HYUNDAI</Link>
-          <Link style={{padding:"10px"}} to="/categoria/Kia">KIA</Link>
-          <Link style={{padding:"10px"}} to="/categoria/Ford">FORD</Link>
-          <Link style={{padding:"10px"}} to="/categoria/Peugeot">PEUGEOT</Link>
+          <Link style={{padding:"10px"}} to="/category/PcEscritorio">PCs De Escritorio</Link>
+          <Link style={{padding:"10px"}} to="/category/Notebook">Notebooks</Link>
+          <Link style={{padding:"10px"}} to="/category/Monitor">Monitores</Link>
+          <Link style={{padding:"10px"}} to="/category/PlacadeVideo">Placas de Video</Link>
         </Nav>
         <Nav>
           <BsCart2 style={styles.Cart} />
-          <Link  to="/cart">MI CARRITO</Link>
+          <Link  to="/cart">Mi carrito</Link>
         </Nav>
       </Container>
     </Navbar>

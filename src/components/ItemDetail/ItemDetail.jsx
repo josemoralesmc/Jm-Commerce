@@ -33,15 +33,15 @@ console.log(list);
   return (
     <div>
       <div>
-        <div className="d-flex justify-content-center">
-          <img src={product.foto} alt="" />
-          <div>
-            <h1>{product.name}</h1>
-            <h2>{product.price}</h2>
+        <div className="d-flex justify-content-center align-items-sm-center">
+          <img style={{width: "18rem", height: "17rem"}} src={product.image} alt="" />
+          <div  style={{width: "18rem"}}>
+            <h3>{product.name}</h3>
+            <h5>${product.price}</h5>
           </div>
         </div>
-        <p style={{ width: "25em", textAlign: "center", margin: "auto" }}>
-          {product.detail}
+        <p style={{ width: "35em", textAlign: "center", margin: "auto" }}>
+          {product.description}
         </p>
       </div>
       <div>

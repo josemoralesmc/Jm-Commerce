@@ -15,12 +15,10 @@ function App() {
           <Routes>
             <Route path="/" element={<ItemListContainer />} />
             <Route
-              exact
-              path="/categoria/:category"
+              path="/category/:category"
               element={<ItemListContainer />}
             />
             <Route
-              exact
               path="/item/:idProducto"
               element={<ItemDetailContainer />}
             />
