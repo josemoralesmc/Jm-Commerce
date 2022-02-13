@@ -17,11 +17,21 @@ function CartContext({children}) {
     }
 
     function DeleteCart(id) {
-        const deleteid = [...list]
-        const filterDelete = deleteid.find(e => e.id !== id)
-        return setList(filterDelete)
+        setList([])
     }
 
+    function totalamount() {
+        return list.reduce((acum, prod) =>  acum= acum + (prod.price * prod.quantity)  ,0)
+    }
+
+    function amount() {
+        return list.reduce((acum, prod) =>  acum += prod.quantity  ,0)
+    }
+   
+    function deleteitem(id) {
+        setList( list.filter( prod => prod.id !== id ) )
+    }
+   
     console.log(list);
 
     return (
@@ -30,7 +40,10 @@ function CartContext({children}) {
            list,
            setList,
            CartProduct,
-           DeleteCart
+           DeleteCart,
+           deleteitem,
+           amount,
+           totalamount
         }
        }>
        

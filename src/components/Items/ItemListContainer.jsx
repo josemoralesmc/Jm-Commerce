@@ -35,11 +35,6 @@ function ItemListContainer() {
       .finally(() => setloading(false))
     }
 
-
-    /* .then(res => setProductos(category ? res.filter( item => item.categoria === category) : 
-    res))
-    .catch(err => console.log(err))
-    .finally(()=> setloading(false))  */
 }, [category])
 
 

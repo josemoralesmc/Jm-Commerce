@@ -1,5 +1,4 @@
 import React from 'react'
-
 import icon from '../../img/controller-1784573_640.png'
 
 const styles = {
@@ -9,10 +8,11 @@ const styles = {
     }
 }
 
-
+   
 function Icon() 
 {
     return ( 
+        
         
         <img src={icon} alt="logo" style={styles.car} />
         

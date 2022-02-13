@@ -1,3 +1,4 @@
+import { useContextCart } from "../Context/CartContext";
 import React from "react";
 import { BsCart2 } from "react-icons/bs";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -5,13 +6,18 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 import Icon from "../CartWidget/CartWidget";
 import { Link, NavLink } from "react-router-dom"
 
+
+
+
 const styles = {
   Cart: {
     width: "1em",
   },
 };
 
+
 function Menu() {
+  const {amount} = useContextCart();
   return (
     <Navbar bg="light" variant="light">
       <Container>
@@ -25,8 +31,11 @@ function Menu() {
           <Link style={{padding:"10px"}} to="/category/PlacadeVideo">Placas de Video</Link>
         </Nav>
         <Nav>
-          <BsCart2 style={styles.Cart} />
-          <Link  to="/cart">Mi carrito</Link>
+        <Link  to="/cart">
+          
+        {amount() !== 0 && amount()}
+        <BsCart2 style={styles.Cart} />
+          Mi carrito</Link>
         </Nav>
       </Container>
     </Navbar>
