@@ -5,37 +5,31 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import Icon from "../CartWidget/CartWidget";
 import { Link, NavLink } from "react-router-dom"
+import '../Navbar/NavBar.css'
 
 
-
-
-const styles = {
-  Cart: {
-    width: "1em",
-  },
-};
 
 
 function Menu() {
   const {amount} = useContextCart();
   return (
-    <Navbar bg="light" variant="light">
+    <Navbar className="Nav" bg="light" variant="light">
       <Container>
         <NavLink to="/">
           <Icon />
         </NavLink>
         <Nav className="me-auto">
-          <Link style={{padding:"10px"}} to="/category/PcEscritorio">PCs De Escritorio</Link>
-          <Link style={{padding:"10px"}} to="/category/Notebook">Notebooks</Link>
-          <Link style={{padding:"10px"}} to="/category/Monitor">Monitores</Link>
-          <Link style={{padding:"10px"}} to="/category/PlacadeVideo">Placas de Video</Link>
+          <Link className="ItemNav" to="/category/PcEscritorio">PC DE ESCRITORIO</Link>
+          <Link className="ItemNav" to="/category/Notebook">NOTEBOOKS</Link>
+          <Link className="ItemNav" to="/category/Monitor">MONITORES</Link>
+          <Link className="ItemNav" to="/category/PlacadeVideo">PLACAS DE VIDEO</Link>
         </Nav>
         <Nav>
-        <Link  to="/cart">
+        <Link className="Cart" to="/cart">
           
         {amount() !== 0 && amount()}
-        <BsCart2 style={styles.Cart} />
-          Mi carrito</Link>
+        <BsCart2 className="IconCart" />
+          MI CARRITO</Link>
         </Nav>
       </Container>
     </Navbar>

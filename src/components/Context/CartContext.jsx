@@ -13,15 +13,15 @@ function CartContext({children}) {
     const [list, setList] = useState([])
 
     function CartProduct(product) {
-        setList( [ ...list, product ] )
+        setList( [...list, product ] )
     }
 
-    function DeleteCart(id) {
+    function DeleteCart() {
         setList([])
     }
 
     function totalamount() {
-        return list.reduce((acum, prod) =>  acum= acum + (prod.price * prod.quantity)  ,0)
+        return list.reduce((acum, prod) =>  acum= acum + (prod.item.price * prod.quantity)  ,0)
     }
 
     function amount() {
@@ -29,7 +29,7 @@ function CartContext({children}) {
     }
    
     function deleteitem(id) {
-        setList( list.filter( prod => prod.id !== id ) )
+        setList( list.filter( prod => prod.item.id !== id ) )
     }
    
     console.log(list);

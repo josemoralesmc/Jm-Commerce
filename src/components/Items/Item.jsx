@@ -10,7 +10,7 @@ export default function Item({products}) {
 
   return (
     <>    
-    <Card style={{margin: "2rem"}}>
+    <Card  style={{margin: "2rem"}}>
      <Card.Img variant="top" style={{width: "18rem", height: "17rem"}} src={products.image} />
      <Card.Body style={{width: "18rem"}}>
        <Card.Title>{products.name}</Card.Title>

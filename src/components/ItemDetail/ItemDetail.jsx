@@ -18,7 +18,7 @@ function onAdd(cant) {
     })
     return setList(liste); 
   }
-  return CartProduct( { ...product  , quantity: cant });
+  return CartProduct( { item:{  ...product}  , quantity: cant });
   }
 
 
@@ -28,7 +28,7 @@ function onAdd(cant) {
   return (
     <div>
       <div>
-        <div className="d-flex justify-content-center align-items-sm-center">
+        <div className="d-flex justify-content-center align-items-sm-center" >
           <img style={{width: "18rem", height: "17rem"}} src={product.image} alt="" />
           <div  style={{width: "18rem"}}>
             <h3>{product.name}</h3>

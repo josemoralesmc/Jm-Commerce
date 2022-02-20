@@ -40,7 +40,7 @@ function ItemListContainer() {
 
     
     return (
-          <div className="d-flex justify-content-center">
+          <div className="d-flex justify-content-center flex-wrap">
             <ItemList products={products} loading={loading} />
           </div>
     )
