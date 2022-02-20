@@ -11,7 +11,7 @@ const CartComponent = () => {
   const Orderpurchase = async () => {
     let order = {}
 
-    order.buyer = {name: "Jose", phone: 3517533747, email: "jose@morales" };
+    order.buyer = {name: "Jose", phone: 213321, email: "jose@morales" };
     order.total = totalamount();
     order.items = list.map(list =>{
       let id = list.item.id;
