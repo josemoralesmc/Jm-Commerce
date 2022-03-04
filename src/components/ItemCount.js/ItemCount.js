@@ -42,8 +42,7 @@ function ItemCount({ initial, stock, onAdd }) {
             className="btn btn-outline-primary"
             onClick={handlerRestar}
           >
-            {" "}
-            -{" "}
+            
           </Button>
           <br />
           <Button
@@ -56,7 +55,7 @@ function ItemCount({ initial, stock, onAdd }) {
         </div>
       ) : (
         <Link to="/cart">
-          {" "}
+          
           <Button
           style={{marginLeft: "45%",
             marginTop: "20%"}}
@@ -64,7 +63,7 @@ function ItemCount({ initial, stock, onAdd }) {
             variant="contained"
           >
             Finalizar compra
-          </Button>{" "}
+          </Button>
         </Link>
       )}
     </>
