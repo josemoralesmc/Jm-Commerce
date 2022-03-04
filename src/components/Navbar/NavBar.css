@@ -4,6 +4,7 @@
   text-decoration: none;
   padding: 10px;
   font-family: "Source Sans Pro", sans-serif;
+  color: white
 }
 
 .Cart {
@@ -17,4 +18,12 @@
 .IconCart {
   margin-right: 0.5em;
   margin-bottom: 0.1em;
+}
+
+.Appbar{
+  height: 5rem
+}
+
+.CartColor{
+  color: white;
 }

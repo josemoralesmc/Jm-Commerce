@@ -6,12 +6,13 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import "./Item.css"
 
 export default function Item({ products }) {
   return (
-    <Card style={{ margin: "2rem" }} sx={{ maxWidth: 345 }}>
+    <Card className="CartItem" sx={{ maxWidth: 345 }}>
       <CardMedia
-        style={{ width: "14rem", height: "15rem" }}
+      className="CardImgae"
         image={products.image}
       />
       <CardContent>

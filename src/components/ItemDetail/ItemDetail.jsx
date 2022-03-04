@@ -2,6 +2,7 @@ import { Box } from "@mui/material";
 import React from "react";
 import { useContextCart } from "../Context/CartContext";
 import ItemCount from "../ItemCount.js/ItemCount";
+import "./ItemDetail.css"
 
 const ItemDetail = ({ product }) => {
 
@@ -30,13 +31,13 @@ function onAdd(cant) {
     <div>
       <div>
         <Box sx={{display: "flex", flexGrow: 1, justifyContent: 'center', alignItems: 'center' }} >
-          <img style={{width: "18rem", height: "17rem"}} src={product.image} alt="" />
-          <Box style={{width: "18rem"}}>
+          <img className="ImageDetail" src={product.image} alt="" />
+          <Box className="BoxDetail">
             <h3>{product.name}</h3>
             <h5>${product.price}</h5>
           </Box>
         </Box>
-        <p style={{ width: "35em", textAlign: "center", margin: "auto" }}>
+        <p className="TextDetail">
           {product.description}
         </p>
       </div>

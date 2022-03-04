@@ -41,7 +41,7 @@ function ItemListContainer() {
 
     
     return (
-          <Box sx={{ display: 'flex' }} >
+          <Box sx={{ display: 'flex',  flexWrap: 'wrap', justifyContent: 'center', }} >
             <ItemList products={products} loading={loading} />
           </Box>
     )

@@ -2,6 +2,15 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Tabla de dependencias 
+| Dependencias | Version | Motivo |
+| ------ | ------ | ------
+| react-router-dom | 6.2.1 | Facilita la navegacion entre componentes
+| firebase | 9.6.6 | Nos facilita una base de datos onlinte en tiempo real
+| @mui/material | 5.4.3 | Esta libreria nos brinda estilos y componentes ya creados.
+| @mui/icons-material | 5.4.4 | Nos ofrece una extensa cantidad de iconos de la propia libreria de Material UI
+| rsuite | 5.6.2 | Podemos extraer todos los loaders que necesitamos.
+
 ## Available Scripts
 
 In the project directory, you can run:

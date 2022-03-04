@@ -1,0 +1,14 @@
+.ImageDetail{
+    width: 18rem; 
+    height: 17rem
+}
+
+.BoxDetail{
+    width: 18rem
+}
+
+.TextDetail{
+    width: 35em;
+    text-align: center;
+     margin: auto
+}

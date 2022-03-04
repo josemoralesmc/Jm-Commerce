@@ -14,7 +14,7 @@ export default function Menu() {
   const { amount } = useContextCart();
   return (
     <Box  sx={{ flexGrow: 1 }}>
-      <AppBar style={{height: "5rem"}} position="static">
+      <AppBar className="Appbar" position="static">
         <Toolbar>
           <IconButton
             size="large"
@@ -41,9 +41,9 @@ export default function Menu() {
               PLACAS DE VIDEO
             </Link>
           </Typography>
-          <Link className="Cart" to="/cart">
+          <Link className="CartColor Cart" to="/cart">
             {amount() !== 0 && amount()}
-            <ShoppingCartIcon className="IconCart" />
+            <ShoppingCartIcon className="IconCart CartColor"/>
             MI CARRITO
           </Link>
         </Toolbar>

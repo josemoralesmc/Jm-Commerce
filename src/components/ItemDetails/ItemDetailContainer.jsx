@@ -2,10 +2,13 @@ import React, {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import { getFirestore, doc, getDoc } from 'firebase/firestore'
-
+import { Loader } from 'rsuite';
+import { Box } from "@mui/material";
 
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState({});
+    const [loading, setLoading] = useState(true);
+    
 
    const {idProducto} = useParams()
 
@@ -21,6 +24,7 @@ const ItemDetailContainer = () => {
       }
       setProduct({id: res.id, ...res.data()});
     })
+    .finally(setLoading(false))
   } catch (error) {
     console.log(error)
   }
@@ -31,9 +35,16 @@ const ItemDetailContainer = () => {
 }, []);
 
   return (
-    <div>
-    <ItemDetail product={product}/>
+    <>
+    { loading ? ( <Box sx={{ display: "flex", justifyContent: "center", alignItmes: "center" }}>
+    <div id="loaderInverseWrapper" className="loader">
+    <Loader content="Cargando..."/>
     </div>
+    </Box> ): ( <div>
+      <ItemDetail product={product}/>
+      </div> )}
+      
+      </>
   );
 }
 

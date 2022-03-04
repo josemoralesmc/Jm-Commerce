@@ -33,8 +33,8 @@ function ItemCount({ initial, stock, onAdd }) {
             className="btn btn-outline-primary button"
             onClick={handleAumentar}
           >
-            {" "}
-            +{" "}
+          
+            +
           </Button>
           {contador}
           <Button
@@ -42,7 +42,7 @@ function ItemCount({ initial, stock, onAdd }) {
             className="btn btn-outline-primary"
             onClick={handlerRestar}
           >
-            
+            -
           </Button>
           <br />
           <Button
@@ -57,8 +57,7 @@ function ItemCount({ initial, stock, onAdd }) {
         <Link to="/cart">
           
           <Button
-          style={{marginLeft: "45%",
-            marginTop: "20%"}}
+          
             className="ctn"
             variant="contained"
           >
