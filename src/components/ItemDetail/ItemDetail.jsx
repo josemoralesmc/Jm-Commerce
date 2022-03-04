@@ -1,3 +1,4 @@
+import { Box } from "@mui/material";
 import React from "react";
 import { useContextCart } from "../Context/CartContext";
 import ItemCount from "../ItemCount.js/ItemCount";
@@ -28,13 +29,13 @@ function onAdd(cant) {
   return (
     <div>
       <div>
-        <div className="d-flex justify-content-center align-items-sm-center" >
+        <Box sx={{display: "flex", flexGrow: 1, justifyContent: 'center', alignItems: 'center' }} >
           <img style={{width: "18rem", height: "17rem"}} src={product.image} alt="" />
-          <div  style={{width: "18rem"}}>
+          <Box style={{width: "18rem"}}>
             <h3>{product.name}</h3>
             <h5>${product.price}</h5>
-          </div>
-        </div>
+          </Box>
+        </Box>
         <p style={{ width: "35em", textAlign: "center", margin: "auto" }}>
           {product.description}
         </p>

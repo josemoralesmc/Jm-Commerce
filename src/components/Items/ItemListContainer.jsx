@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import ItemList from "./ItemList"
 import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore'
 import { useParams } from "react-router-dom"
+import { Box } from "@mui/material"
 
 function ItemListContainer() { 
 
@@ -40,9 +41,9 @@ function ItemListContainer() {
 
     
     return (
-          <div className="d-flex justify-content-center flex-wrap">
+          <Box sx={{ display: 'flex' }} >
             <ItemList products={products} loading={loading} />
-          </div>
+          </Box>
     )
 }
 

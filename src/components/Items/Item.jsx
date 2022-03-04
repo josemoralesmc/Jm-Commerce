@@ -1,25 +1,32 @@
-import React from 'react';
-import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
-import { Link } from "react-router-dom"
+import React from "react";
+import { Link } from "react-router-dom";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 
-
-
-export default function Item({products}) {
-
-
+export default function Item({ products }) {
   return (
-    <>    
-    <Card  style={{margin: "2rem"}}>
-     <Card.Img variant="top" style={{width: "18rem", height: "17rem"}} src={products.image} />
-     <Card.Body style={{width: "18rem"}}>
-       <Card.Title>{products.name}</Card.Title>
-       <h3>${products.price}</h3>
-      <Link to={`/item/${products.id}`}>
-       <Button variant="primary">Ver Mas</Button>
-       </Link>
-     </Card.Body>
-   </Card>
-    </>
+    <Card style={{ margin: "2rem" }} sx={{ maxWidth: 345 }}>
+      <CardMedia
+        style={{ width: "14rem", height: "15rem" }}
+        image={products.image}
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h6" component="div">
+          {products.name}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          <h4>${products.price}</h4>
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Link to={`/item/${products.id}`}>
+          <Button variant="contained">Ver Mas</Button>
+        </Link>
+      </CardActions>
+    </Card>
   );
 }

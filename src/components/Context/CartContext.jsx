@@ -9,8 +9,9 @@ export function useContextCart() { return useContext(contextCart) }
 
 
 function CartContext({children}) {
-
+    const [id, setId] = useState('')
     const [list, setList] = useState([])
+    const [open, setOpen] = useState(false);
 
     function CartProduct(product) {
         setList( [...list, product ] )
@@ -31,18 +32,27 @@ function CartContext({children}) {
     function deleteitem(id) {
         setList( list.filter( prod => prod.item.id !== id ) )
     }
-   
-    console.log(list);
+  
+    const handleClose = () => setOpen(false);
+
+    function idOrder(id) {
+        setId(id)
+        setOpen(true);
+      }
 
     return (
        <contextCart.Provider value={{
 
            list,
+           id,
+           open,
            setList,
+           handleClose,
            CartProduct,
            DeleteCart,
            deleteitem,
            amount,
+           idOrder,
            totalamount
         }
        }>

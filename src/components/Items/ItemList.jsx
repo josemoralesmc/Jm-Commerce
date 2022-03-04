@@ -1,3 +1,4 @@
+import { Box } from "@mui/material";
 import React from "react";
 import Item from "./Item";
 
@@ -5,11 +6,11 @@ export default function ItemList({ products, loading }) {
   return (
     <>
       {loading ? (
-        <div className="d-flex justify-content-center">
+        <Box sx={{ display: 'flex' }}>
           <div className="spinner-grow" role="status">
             <span className="visually-hidden">Loading...</span>
           </div>
-        </div>
+        </Box>
       ) : (
         products.map((products) => (
           <Item

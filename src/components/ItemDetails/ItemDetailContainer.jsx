@@ -13,10 +13,18 @@ const ItemDetailContainer = () => {
    useEffect(() => {
   const db = getFirestore()
   const item = doc(db, 'products', idProducto)
-    getDoc(item)
+  try {
+     getDoc(item)
     .then((res) => {
-      setProduct({id: res.id, ...res.data()})
-    });
+      if (!res.data()) {
+       return alert(`El producto con id: ${idProducto} no existe`)
+      }
+      setProduct({id: res.id, ...res.data()});
+    })
+  } catch (error) {
+    console.log(error)
+  }
+   
       
   
  

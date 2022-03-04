@@ -1,41 +1,74 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import './ItemCount.css'
+import Button from "@mui/material/Button";
+import "./ItemCount.css";
 
-function ItemCount({initial, stock, onAdd}) {
+function ItemCount({ initial, stock, onAdd }) {
   const [contador, setcontador] = useState(initial);
-  const [button, setButton] = useState("button")
+  const [button, setButton] = useState("button");
 
-  const handleAumentar=()=>{
+  const handleAumentar = () => {
     if (contador < stock) {
-      setcontador(contador + 1)
+      setcontador(contador + 1);
     }
-  }
-  
-  const handlerRestar=()=>{    
-    if (contador > initial) {
-      setcontador(contador - 1)
-    }
-  }
+  };
 
-  const agregar = () =>{
-    onAdd(contador)
-    setButton("ButtonGocCart")
-  }
+  const handlerRestar = () => {
+    if (contador > initial) {
+      setcontador(contador - 1);
+    }
+  };
+
+  const agregar = () => {
+    onAdd(contador);
+    setButton("ButtonGocCart");
+  };
 
   return (
     <>
-    { button === "button" ? <div className="ctn">
-    <button className="btn btn-outline-primary button"  onClick={handleAumentar}> + </button>
-    { contador }
-    <button className="btn btn-outline-primary" onClick={handlerRestar}> - </button><br/>
-    <button className="btn btn-outline-primary btn-block buttonRest" onClick={agregar} >Agregar al carrito</button>
-    </div> 
-    :  <Link to="/cart"> <button className="btn btn-outline-primary btn-block buttonRest ctn"  >Finalizar compra</button> </Link>}
-    
-    
+      {button === "button" ? (
+        <div className="ctn">
+          <Button
+            variant="contained"
+            className="btn btn-outline-primary button"
+            onClick={handleAumentar}
+          >
+            {" "}
+            +{" "}
+          </Button>
+          {contador}
+          <Button
+            variant="contained"
+            className="btn btn-outline-primary"
+            onClick={handlerRestar}
+          >
+            {" "}
+            -{" "}
+          </Button>
+          <br />
+          <Button
+            variant="contained"
+            className="btn btn-outline-primary btn-block buttonRest"
+            onClick={agregar}
+          >
+            Agregar al carrito
+          </Button>
+        </div>
+      ) : (
+        <Link to="/cart">
+          {" "}
+          <Button
+          style={{marginLeft: "45%",
+            marginTop: "20%"}}
+            className="ctn"
+            variant="contained"
+          >
+            Finalizar compra
+          </Button>{" "}
+        </Link>
+      )}
     </>
-    )
+  );
 }
 
 export default ItemCount;
