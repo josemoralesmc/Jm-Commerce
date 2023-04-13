@@ -1,4 +1,4 @@
-# Pendint to do
+# Pending to do
 
 Correct button positioning and checkout finalization
 
